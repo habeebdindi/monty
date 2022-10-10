@@ -142,7 +142,7 @@ void op_div(stack_t **head, unsigned int line_number)
 	}
 }
 
-/*
+/**
  * op_mod - find modulus of first and second element in the stack
  * @head: pointer to first element in the stack
  * @line_number: line read
