@@ -1,9 +1,10 @@
+#include "monty.h"
 /**
- * * _isnum - check if a character is a number
- * * @c: input character
- * *
- * * Return: 1 if true and 0 if false
- * */
+ * _isnum - check if a character is a number
+ * @c: input character
+ *
+ * Return: 1 if true and 0 if false
+ */
 int _isnum(char c)
 {
 	if (c >= '0' && c <= '9')
@@ -12,12 +13,12 @@ int _isnum(char c)
 		return (0);
 }
 /**
- * * _atoi - convert a string of numbers to an integer
- * * @num: pointer to num variable
- * * @s: input string
- * *
- * * Return: integer equivalent to input string
- * */
+ * _atoi - convert a string of numbers to an integer
+ * @num: pointer to num variable
+ * @s: input string
+ *
+ * Return: integer equivalent to input string
+ */
 int _atoi(int *num, char *s)
 {
 

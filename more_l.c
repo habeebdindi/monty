@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * * add_dnodeint_end - add node to end of linked list
- * * @head: double pointer to nodes in the list
- * * @n: number to fill new node with
- * *
- * * Return: new node on success, NULL on failure
- * */
+ * add_dnodeint_end - add node to end of linked list
+ * @head: double pointer to nodes in the list
+ * @n: number to fill new node with
+ *
+ * Return: new node on success, NULL on failure
+ */
 
 stack_t *add_dnodeint_end(stack_t **head, int n)
 {

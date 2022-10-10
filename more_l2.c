@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * * get_dnodeint_at_index - return nth node of the list
- * * @head: pointer to the nodes of the list
- * * @index: number to return node of in list
- * *
- * * Return: head at position of index
- * */
+ * get_dnodeint_at_index - return nth node of the list
+ * @head: pointer to the nodes of the list
+ * @index: number to return node of in list
+ *
+ * Return: head at position of index
+ */
 
 stack_t *get_dnodeint_at_index(stack_t *head, unsigned int index)
 {
@@ -27,13 +27,13 @@ stack_t *get_dnodeint_at_index(stack_t *head, unsigned int index)
 }
 
 /**
- * * insert_dnodeint_at_index - insert a new node in list at position index
- * * @h: double pointer to nodes in the list
- * * @idx: index to insert node at
- * * @n: number to fill into new node
- * *
- * * Return: new node at postion on success, NULL on failure
- * */
+ * insert_dnodeint_at_index - insert a new node in list at position index
+ * @h: double pointer to nodes in the list
+ * @idx: index to insert node at
+ * @n: number to fill into new node
+ *
+ * Return: new node at postion on success, NULL on failure
+ */
 
 stack_t *insert_dnodeint_at_index(stack_t **h, unsigned int idx, int n)
 {
@@ -69,12 +69,12 @@ stack_t *insert_dnodeint_at_index(stack_t **h, unsigned int idx, int n)
 }
 
 /**
- * * add_dnodeint - add a node at head
- * * @head: double pointer to head of list
- * * @n: number for new node member n
- * *
- * * Return: new node address
- * */
+ * add_dnodeint - add a node at head
+ * @head: double pointer to head of list
+ * @n: number for new node member n
+ *
+ * Return: new node address
+ */
 stack_t *add_dnodeint(stack_t **head, int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
@@ -95,12 +95,12 @@ stack_t *add_dnodeint(stack_t **head, int n)
 }
 
 /**
- * * delete_dnodeint_at_index - delete node in list at index
- * * @head: pointer to nodes in the list
- * * @index: position to remove node
- * *
- * * Return: 1 on success, -1 if failure
- * */
+ * delete_dnodeint_at_index - delete node in list at index
+ * @head: pointer to nodes in the list
+ * @index: position to remove node
+ *
+ * Return: 1 on success, -1 if failure
+ */
 
 void delete_dnodeint_at_index(stack_t **head, unsigned int index)
 {
@@ -130,11 +130,11 @@ void delete_dnodeint_at_index(stack_t **head, unsigned int index)
 }
 
 /**
- * * dlistint_len - return length of the linked list
- * * @h: pointer to the nodes of the list
- * *
- * * Return: number of nodes in the list
- * */
+ * dlistint_len - return length of the linked list
+ * @h: pointer to the nodes of the list
+ *
+ * Return: number of nodes in the list
+ */
 
 size_t dlistint_len(const stack_t *h)
 {

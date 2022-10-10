@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * * get_op_func - selects correct function for format
- * * @s: input opcode
- * *
- * * Return: pointer to matching function
- * */
+ * get_op_func - selects correct function for format
+ * @s: input opcode
+ *
+ * Return: pointer to matching function
+ */
 void (*get_op_func(char *s))(stack_t **head, unsigned int linenumber)
 {
 	/** initialize struct of opcode functions **/

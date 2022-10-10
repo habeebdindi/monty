@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * * op_stack - change the linked list to act as stack
- * * @head: pointer to first element of the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_stack - change the linked list to act as stack
+ * @head: pointer to first element of the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_stack(stack_t **head, unsigned int line_number)
 {
 	(void)head;
@@ -15,12 +15,12 @@ void op_stack(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_queue - change linked list to act as queue
- * * @head: pointer to first element of the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_queue - change linked list to act as queue
+ * @head: pointer to first element of the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_queue(stack_t **head, unsigned int line_number)
 {
 	(void)head;
@@ -29,12 +29,12 @@ void op_queue(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_rotl - rotate the stack to the left
- * * @head: pointer to first element of the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_rotl - rotate the stack to the left
+ * @head: pointer to first element of the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_rotl(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp = *head;
@@ -50,12 +50,12 @@ void op_rotl(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_rotr - rotate the stack to the right
- * * @head: pointer to first element of the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_rotr - rotate the stack to the right
+ * @head: pointer to first element of the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_rotr(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp = *head;
@@ -71,12 +71,12 @@ void op_rotr(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_swap - swap first two elements of the stack
- * * @head: pointer to first element of the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_swap - swap first two elements of the stack
+ * @head: pointer to first element of the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 
 void op_swap(stack_t **head, unsigned int line_number)
 {

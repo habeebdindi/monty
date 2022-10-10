@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * * op_pchar - print element of stack as char
- * * @head: pointer to first element of the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_pchar - print element of stack as char
+ * @head: pointer to first element of the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_pchar(stack_t **head, unsigned int line_number)
 {
 	stack_t *node = *head;
@@ -32,12 +32,12 @@ void op_pchar(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_pstr - print elements of stack as chars
- * * @head: pointer to first element of stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_pstr - print elements of stack as chars
+ * @head: pointer to first element of stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 
 void op_pstr(stack_t **head, unsigned int line_number)
 {

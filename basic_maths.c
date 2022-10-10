@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * * op_add - find addition of first and second element in the stack
- * * @head: pointer to first element in the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_add - find addition of first and second element in the stack
+ * @head: pointer to first element in the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_add(stack_t **head, unsigned int line_number)
 {
 	stack_t *new = NULL, *node_0 = NULL, *node_1 = NULL;
@@ -35,12 +35,12 @@ void op_add(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_sub - find subtraction of first and second element in the stack
- * * @head: pointer to first element in the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_sub - find subtraction of first and second element in the stack
+ * @head: pointer to first element in the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *new = NULL, *node_0 = NULL, *node_1 = NULL;
@@ -69,12 +69,12 @@ void op_sub(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_mul - find product of first and second element in the stack
- * * @head: pointer to first element in the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_mul - find product of first and second element in the stack
+ * @head: pointer to first element in the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_mul(stack_t **head, unsigned int line_number)
 {
 	stack_t *new = NULL, *node_0 = NULL, *node_1 = NULL;
@@ -103,12 +103,12 @@ void op_mul(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_div - find dividend of first and second element in the stack
- * * @head: pointer to first element in the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_div - find dividend of first and second element in the stack
+ * @head: pointer to first element in the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_div(stack_t **head, unsigned int line_number)
 {
 	stack_t *new = NULL, *node_0 = NULL, *node_1 = NULL;
@@ -142,13 +142,13 @@ void op_div(stack_t **head, unsigned int line_number)
 	}
 }
 
-/**
- * * op_mod - find modulus of first and second element in the stack
- * * @head: pointer to first element in the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+/*
+ * op_mod - find modulus of first and second element in the stack
+ * @head: pointer to first element in the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 
 void op_mod(stack_t **head, unsigned int line_number)
 {

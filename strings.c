@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * * wordcount - finds words within string
- * * @str: string being passed to check for words
- * *
- * * Return: number of words
- * */
+ * wordcount - finds words within string
+ * @str: string being passed to check for words
+ *
+ * Return: number of words
+ */
 
 int wordcount(char *str)
 {
@@ -26,9 +26,9 @@ int wordcount(char *str)
 }
 
 /**
- * * rm_nl - remove the last character newline from string
- * * @lineptr: double pointer to string
- * */
+ * rm_nl - remove the last character newline from string
+ * @lineptr: double pointer to string
+ */
 void rm_nl(char **lineptr)
 {
 	char *ptr = NULL;
@@ -43,11 +43,11 @@ void rm_nl(char **lineptr)
 }
 
 /**
- * * _strlen - find the length of a string
- * * @s: pointer to string
- * *
- * * Return: length of string as int
- * */
+ * _strlen - find the length of a string
+ * @s: pointer to string
+ *
+ * Return: length of string as int
+ */
 int _strlen(char *s)
 {
 	int i = 0;
@@ -59,10 +59,10 @@ int _strlen(char *s)
 }
 
 /**
- * * strtok_list - tokenize line into argument
- * * @line: input string
- * *
- * */
+ * strtok_list - tokenize line into argument
+ * @line: input string
+ *
+ */
 
 void strtok_list(char *line)
 {

@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * * op_push - add a node to the head of the stack
- * * @head: double pointer to the nodes in the list
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_push - add a node to the head of the stack
+ * @head: double pointer to the nodes in the list
+ * @line_number: line read
+ *
+ * Return: void
+ */
 
 void op_push(stack_t **head, unsigned int line_number)
 {
@@ -41,12 +41,12 @@ void op_push(stack_t **head, unsigned int line_number)
 	}
 }
 /**
- * * op_pall - print the linked list
- * * @h: pointer to the first element in the stack
- * * @line_number: pointer to the nodes of the list
- * *
- * * Return: void
- * */
+ * op_pall - print the linked list
+ * @h: pointer to the first element in the stack
+ * @line_number: pointer to the nodes of the list
+ *
+ * Return: void
+ */
 
 void op_pall(stack_t **h, unsigned int line_number)
 {
@@ -62,12 +62,12 @@ void op_pall(stack_t **h, unsigned int line_number)
 }
 
 /**
- * * op_pop - remove most recenet element on the stack
- * * @head: pointer to first element of the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_pop - remove most recenet element on the stack
+ * @head: pointer to first element of the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 
 void op_pop(stack_t **head, unsigned int line_number)
 {
@@ -83,12 +83,12 @@ void op_pop(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_pint - print first element of the stack
- * * @head: pointer to first element on the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_pint - print first element of the stack
+ * @head: pointer to first element on the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 void op_pint(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp = *head;
@@ -103,12 +103,12 @@ void op_pint(stack_t **head, unsigned int line_number)
 }
 
 /**
- * * op_nop - function that doesnt do anything
- * * @head: pointer to first element in the stack
- * * @line_number: line read
- * *
- * * Return: void
- * */
+ * op_nop - function that doesnt do anything
+ * @head: pointer to first element in the stack
+ * @line_number: line read
+ *
+ * Return: void
+ */
 
 void op_nop(stack_t **head, unsigned int line_number)
 {

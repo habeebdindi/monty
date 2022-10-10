@@ -2,10 +2,10 @@
 
 global_struct_t global_struct;
 /**
- * * free_all - free elements in the list
- * *
- * * Return: void
- * */
+ * free_all - free elements in the list
+ *
+ * Return: void
+ */
 
 void free_all(void)
 {

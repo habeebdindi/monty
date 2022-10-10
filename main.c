@@ -3,11 +3,11 @@
 global_struct_t global_struct = {NULL, 0, NULL, NULL, NULL, 0};
 
 /**
- * * main - main function for Monty interpreter
- * * @argc: number of arguments passed to the program
- * * @argv: vector of list of pointers to arguments passed
- * * Return: 0 on success and 1 on failure
- * */
+ * main - main function for Monty interpreter
+ * @argc: number of arguments passed to the program
+ * @argv: vector of list of pointers to arguments passed
+ * Return: 0 on success and 1 on failure
+ */
 int main(int argc, char *argv[])
 {
 	size_t len = 0;
