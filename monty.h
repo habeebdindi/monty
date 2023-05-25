@@ -29,6 +29,11 @@ typedef struct stack_s
 } stack_t;
 
 /**
+ * struct global_vars - global variables
+ * @number: number to initailise linked list with.
+ * @fp: file pointer.
+ * @stack: the stack.
+ * @line: line containing opcodes.
  */
 typedef struct global_vars
 {
