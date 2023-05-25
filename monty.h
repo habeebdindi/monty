@@ -2,6 +2,7 @@
 #define MONTY_H
 #define  _GNU_SOURCE
 #define TOK_DELIM " \t\r\n\a"
+#include <ctype.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -26,7 +27,7 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
-extern stack_t *stack;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -42,12 +43,14 @@ typedef struct instruction_s
 } instruction_t;
 
 void _pall(stack_t **head, unsigned int line_num);
-void execute_op(char *input, unsigned int line_num);
+void execute_op(char *input, unsigned int line_num, stack_t **stack);
 void _push(stack_t **head, unsigned int line_num);
 void _pint(stack_t **head, unsigned int line_num);
 void _pop(stack_t **head, unsigned int line_num);
 void _swap(stack_t **head, unsigned int line_num);
 void _add(stack_t **head, unsigned int line_num);
 void _nop(stack_t **head, unsigned int line_num);
+void free_stack(stack_t **head);
 
+char *trim_space(char *s);
 #endif /* MONTY_H */
