@@ -25,7 +25,8 @@ void execute_op(char *input, unsigned int line_num, stack_t **stack)
 	if (!*input)
 		return;
 	tok = strtok(input, TOK_DELIM);
-	for (i = 0; i < 6 && strlen(tok) == strlen(ops[i].opcode); i++)
+	for (i = 0; i < 7; i++)
+	{
 		if (strcmp(tok, ops[i].opcode) == 0)
 		{
 			if (strcmp(tok, "push") == 0)
@@ -43,6 +44,7 @@ void execute_op(char *input, unsigned int line_num, stack_t **stack)
 			(ops[i]).f(stack, line_num);
 			return;
 		}
+	}
 	dprintf(1, "L:%u unknown instruction %s\n", line_num, tok);
 	free(input);
 	free_stack(stack);
