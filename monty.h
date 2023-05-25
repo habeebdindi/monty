@@ -52,5 +52,6 @@ void _add(stack_t **head, unsigned int line_num);
 void _nop(stack_t **head, unsigned int line_num);
 void free_stack(stack_t **head);
 
+void check_push(char *tok, stack_t **stack, char *input, unsigned int line_num);
 char *trim_space(char *s);
 #endif /* MONTY_H */

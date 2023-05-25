@@ -32,14 +32,7 @@ void execute_op(char *input, unsigned int line_num, stack_t **stack)
 			if (strcmp(tok, "push") == 0)
 			{
 				tok = strtok(NULL, TOK_DELIM);
-				number = atoi(tok);
-				if (number == 0 && *tok != '0')
-				{
-					dprintf(1, "L%u: usage: push integer\n", line_num);
-					free_stack(stack);
-					free(input);
-					exit(EXIT_FAILURE);
-				}
+				check_push(tok, stack, input, line_num);
 			}
 			(ops[i]).f(stack, line_num);
 			return;
@@ -49,4 +42,24 @@ void execute_op(char *input, unsigned int line_num, stack_t **stack)
 	free(input);
 	free_stack(stack);
 	exit(EXIT_FAILURE);
+}
+
+/**
+ * check_push - checks if the push opcode has been used correctly.
+ * @stack: the stack.
+ * @input: the line containing the opcode.
+ * @tok: the number in string.
+ * @line_num: the line number of the opcode in its file.
+ */
+void check_push(char *tok, stack_t **stack, char *input, unsigned int line_num)
+{
+	if (tok)
+		number = atoi(tok);
+	if (!tok || (number == 0 && *tok != '0'))
+	{
+		dprintf(1, "L%u: usage: push integer\n", line_num);
+		free_stack(stack);
+		free(input);
+		exit(EXIT_FAILURE);
+	}
 }
