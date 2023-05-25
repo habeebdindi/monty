@@ -10,7 +10,7 @@ int number = 0;
  */
 int main(int ac, char **av)
 {
-	FILE  *fp;
+	FILE *fp;
 	char *line = NULL;
 	size_t len = 0;
 	int line_num = 1;

@@ -7,6 +7,7 @@
  * @stack: pointer to the stack.
  * Return: void.
  */
+
 void execute_op(char *input, unsigned int line_num, stack_t **stack)
 {
 	instruction_t ops[] = {
@@ -34,7 +35,7 @@ void execute_op(char *input, unsigned int line_num, stack_t **stack)
 				tok = strtok(NULL, TOK_DELIM);
 				check_push(tok, stack, input, line_num);
 			}
-			(ops[i]).f(stack, line_num);
+			ops[i].f(stack, line_num);
 			return;
 		}
 	}

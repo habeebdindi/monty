@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _push - push opcode to the stack.
+ * _push - pushes an element onto the stack.
  * @head: the head of the stack.
  * @line_num: the line of the opcode being executed.
  * Return: void.
@@ -13,7 +13,11 @@ void _push(stack_t **head, unsigned int line_num)
 	(void)line_num;
 	top = malloc(sizeof(stack_t));
 	if (!top)
-		return;
+	{
+		dprintf(1, "Error: malloc failed\n");
+		free_stack(head);
+		exit(EXIT_FAILURE);
+	}
 	top->prev = NULL;
 	top->n = (int)number;
 	top->next = *head;
