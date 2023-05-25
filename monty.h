@@ -1,12 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
-#define TOK_DELIM " /t/n/r/a"
+#define  _GNU_SOURCE
+#define TOK_DELIM " \t\r\n\a"
 #include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stddef.h>
-#include <string.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
@@ -22,11 +22,11 @@ extern int number;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
-
+extern stack_t *stack;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -37,11 +37,17 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 void _pall(stack_t **head, unsigned int line_num);
 void execute_op(char *input, unsigned int line_num);
 void _push(stack_t **head, unsigned int line_num);
+void _pint(stack_t **head, unsigned int line_num);
+void _pop(stack_t **head, unsigned int line_num);
+void _swap(stack_t **head, unsigned int line_num);
+void _add(stack_t **head, unsigned int line_num);
+void _nop(stack_t **head, unsigned int line_num);
 
 #endif /* MONTY_H */
