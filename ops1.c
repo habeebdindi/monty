@@ -15,11 +15,13 @@ void _push(stack_t **head, unsigned int line_num)
 	if (!top)
 	{
 		dprintf(1, "Error: malloc failed\n");
-		free_stack(head);
+		fclose(global.fp);
+		free_stack(global.stack);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 	top->prev = NULL;
-	top->n = (int)number;
+	top->n = (int)global.number;
 	top->next = *head;
 	*head = top;
 }
@@ -75,6 +77,9 @@ void _pop(stack_t **head, unsigned int line_num)
 	if (!*head)
 	{
 		dprintf(1, "L%d: can't pop an empty stack\n", line_num);
+		fclose(global.fp);
+		free_stack(global.stack);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 	top = *head;
@@ -98,6 +103,9 @@ void _swap(stack_t **head, unsigned int line_num)
 	if (!*head || !(*head)->next)
 	{
 		printf("L%d: can't swap, stack too short\n", line_num);
+		fclose(global.fp);
+		free_stack(global.stack);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 	top = *head;

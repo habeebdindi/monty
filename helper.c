@@ -5,14 +5,14 @@
  * @head: the top of the stack.
  * Return: void.
  */
-void free_stack(stack_t **head)
+void free_stack(stack_t *head)
 {
 	stack_t *top;
 
-	while (*head)
+	while (head)
 	{
-		top = *head;
-		*head = (*head)->next;
+		top = head;
+		head = head->next;
 		free(top);
 	}
 }

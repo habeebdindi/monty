@@ -4,11 +4,9 @@
  * execute_op - checks and executes the opcode.
  * @input: the buffer containing the opcode.
  * @line_num: the line number of the opcode.
- * @stack: pointer to the stack.
  * Return: void.
  */
-
-void execute_op(char *input, unsigned int line_num, stack_t **stack)
+void execute_op(char *input, unsigned int line_num)
 {
 	instruction_t ops[] = {
 		{"pall", _pall},
@@ -33,34 +31,34 @@ void execute_op(char *input, unsigned int line_num, stack_t **stack)
 			if (strcmp(tok, "push") == 0)
 			{
 				tok = strtok(NULL, TOK_DELIM);
-				check_push(tok, stack, input, line_num);
+				check_push(tok, line_num);
 			}
-			ops[i].f(stack, line_num);
+			ops[i].f(&global.stack, line_num);
 			return;
 		}
 	}
 	dprintf(1, "L:%u unknown instruction %s\n", line_num, tok);
-	free(input);
-	free_stack(stack);
+	fclose(global.fp);
+	free(global.line);
+	free_stack(global.stack);
 	exit(EXIT_FAILURE);
 }
 
 /**
  * check_push - checks if the push opcode has been used correctly.
- * @stack: the stack.
- * @input: the line containing the opcode.
  * @tok: the number in string.
  * @line_num: the line number of the opcode in its file.
  */
-void check_push(char *tok, stack_t **stack, char *input, unsigned int line_num)
+void check_push(char *tok, unsigned int line_num)
 {
 	if (tok)
-		number = atoi(tok);
-	if (!tok || (number == 0 && *tok != '0'))
+		global.number = atoi(tok);
+	if (!tok || (global.number == 0 && *tok != '0'))
 	{
 		dprintf(1, "L%u: usage: push integer\n", line_num);
-		free_stack(stack);
-		free(input);
+		fclose(global.fp);
+		free_stack(global.stack);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 }

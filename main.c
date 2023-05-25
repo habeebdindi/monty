@@ -1,39 +1,35 @@
 #include "monty.h"
 
-int number = 0;
-
 /**
  * main - Interpreter for monty bytecodes.
  * @ac: argument count to program.
  * @av: arguments to program.
  * Return: 0 always.
  */
+globs global = {0, NULL, NULL, NULL};
 int main(int ac, char **av)
 {
-	FILE *fp;
-	char *line = NULL;
 	size_t len = 0;
 	int line_num = 1;
-	stack_t *stack = NULL;
 
 	if (ac != 2)
 	{
 		dprintf(1, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	fp = fopen(av[1], "r");
-	if (!fp)
+	global.fp = fopen(av[1], "r");
+	if (!global.fp)
 	{
 		dprintf(1, "Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&line, &len, fp) != EOF)
+	while (getline(&(global.line), &len, global.fp) != -1)
 	{
-		execute_op(line, line_num, &stack);
+		execute_op(global.line, line_num);
 		line_num++;
 	}
-	free(line);
-	fclose(fp);
-	free_stack(&stack);
+	fclose(global.fp);
+	free_stack(global.stack);
+	free(global.line);
 	return (0);
 }

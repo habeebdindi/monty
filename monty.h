@@ -29,6 +29,18 @@ typedef struct stack_s
 } stack_t;
 
 /**
+ */
+typedef struct global_vars
+{
+	int number;
+	FILE *fp;
+	stack_t *stack;
+	char *line;
+} globs;
+
+extern globs global;
+
+/**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
@@ -43,15 +55,15 @@ typedef struct instruction_s
 } instruction_t;
 
 void _pall(stack_t **head, unsigned int line_num);
-void execute_op(char *input, unsigned int line_num, stack_t **stack);
+void execute_op(char *input, unsigned int line_num);
 void _push(stack_t **head, unsigned int line_num);
 void _pint(stack_t **head, unsigned int line_num);
 void _pop(stack_t **head, unsigned int line_num);
 void _swap(stack_t **head, unsigned int line_num);
 void _add(stack_t **head, unsigned int line_num);
 void _nop(stack_t **head, unsigned int line_num);
-void free_stack(stack_t **head);
+void free_stack(stack_t *head);
 
-void check_push(char *tok, stack_t **stack, char *input, unsigned int line_num);
+void check_push(char *tok, unsigned int line_num);
 char *trim_space(char *s);
 #endif /* MONTY_H */
