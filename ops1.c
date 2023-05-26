@@ -21,7 +21,7 @@ void _push(stack_t **head, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	top->prev = NULL;
-	top->n = (int)global.number;
+	top->n = global.number;
 	top->next = *head;
 	*head = top;
 }
@@ -59,7 +59,13 @@ void _pint(stack_t **head, unsigned int line_num)
 
 	(void)line_num;
 	if (!*head)
-		return;
+	{
+		dprintf(2, "L%u: can't pint, stack empty\n", line_num);
+		fclose(global.fp);
+		free_stack(global.stack);
+		free(global.line);
+		exit(EXIT_FAILURE);
+	}
 	top = *head;
 	printf("%d\n", top->n);
 }
@@ -76,7 +82,7 @@ void _pop(stack_t **head, unsigned int line_num)
 
 	if (!*head)
 	{
-		dprintf(2, "L%d: can't pop an empty stack\n", line_num);
+		dprintf(2, "L%u: can't pop an empty stack\n", line_num);
 		fclose(global.fp);
 		free_stack(global.stack);
 		free(global.line);
@@ -102,7 +108,7 @@ void _swap(stack_t **head, unsigned int line_num)
 
 	if (!*head || !(*head)->next)
 	{
-		dprintf(2, "L%d: can't swap, stack too short\n", line_num);
+		dprintf(2, "L%u: can't swap, stack too short\n", line_num);
 		fclose(global.fp);
 		free_stack(global.stack);
 		free(global.line);
