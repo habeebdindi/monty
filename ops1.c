@@ -20,8 +20,8 @@ void _push(stack_t **head, unsigned int line_num)
 	top->prev = NULL;
 	top->n = global.number;
 	top->next = *head;
-	if (global.stack != NULL)
-		(global.stack)->prev = top;
+	if (*head != NULL)
+		(*head)->prev = top;
 	*head = top;
 }
 
@@ -36,7 +36,7 @@ void _pall(stack_t **head, unsigned int line_num)
 	stack_t *top;
 
 	(void)line_num;
-	if (!*head)
+	if (!*head || !head)
 		return;
 	top = *head;
 	while (top)
