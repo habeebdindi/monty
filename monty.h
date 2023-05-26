@@ -64,9 +64,14 @@ void _pint(stack_t **head, unsigned int line_num);
 void _pop(stack_t **head, unsigned int line_num);
 void _swap(stack_t **head, unsigned int line_num);
 void _add(stack_t **head, unsigned int line_num);
+void _sub(stack_t **head, unsigned int line_num);
+void _div(stack_t **head, unsigned int line_num);
+void _mul(stack_t **head, unsigned int line_num);
+void _mod(stack_t **head, unsigned int line_num);
 void _nop(stack_t **head, unsigned int line_num);
-void free_stack(stack_t *head);
 
+void cleanup_exit(void);
+void free_stack(stack_t *head);
 void check_push(char *tok, unsigned int line_num);
 char *trim_space(char *s);
 #endif /* MONTY_H */

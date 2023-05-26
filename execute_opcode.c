@@ -9,13 +9,10 @@
 void execute_op(char *input, unsigned int line_num)
 {
 	instruction_t ops[] = {
-		{"pall", _pall},
-		{"push", _push},
-		{"pint", _pint},
-		{"pop", _pop},
-		{"swap", _swap},
-		{"add", _add},
-		{"nop", _nop}
+		{"pall", _pall}, {"push", _push}, {"pint", _pint},
+		{"pop", _pop}, {"swap", _swap}, {"add", _add},
+		{"nop", _nop}, {"sub", _sub}, {"div", _div},
+		{"mul", _mul}, {"mod", _mod}
 	};
 	char *tok;
 	int i;
@@ -24,7 +21,7 @@ void execute_op(char *input, unsigned int line_num)
 	if (!*input)
 		return;
 	tok = strtok(input, TOK_DELIM);
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 12; i++)
 	{
 		if (strcmp(tok, ops[i].opcode) == 0)
 		{
@@ -38,10 +35,7 @@ void execute_op(char *input, unsigned int line_num)
 		}
 	}
 	dprintf(2, "L:%u unknown instruction %s\n", line_num, tok);
-	fclose(global.fp);
-	free(global.line);
-	free_stack(global.stack);
-	exit(EXIT_FAILURE);
+	cleanup_exit();
 }
 
 /**
@@ -56,9 +50,18 @@ void check_push(char *tok, unsigned int line_num)
 	if (!tok || (global.number == 0 && *tok != '0'))
 	{
 		dprintf(2, "L%u: usage: push integer\n", line_num);
-		fclose(global.fp);
-		free_stack(global.stack);
-		free(global.line);
-		exit(EXIT_FAILURE);
+		cleanup_exit();
 	}
+}
+
+/**
+ * cleanup_exit - frees all memory and exits with a failed stauts.
+ * Return: void.
+ */
+void cleanup_exit(void)
+{
+	fclose(global.fp);
+	free_stack(global.stack);
+	free(global.line);
+	exit(EXIT_FAILURE);
 }
