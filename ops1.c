@@ -57,7 +57,7 @@ void _pint(stack_t **head, unsigned int line_num)
 	stack_t *top;
 
 	(void)line_num;
-	if (!*head)
+	if (!*head || !head)
 	{
 		dprintf(2, "L%u: can't pint, stack empty\n", line_num);
 		cleanup_exit();
@@ -76,7 +76,7 @@ void _pop(stack_t **head, unsigned int line_num)
 {
 	stack_t *top;
 
-	if (!*head)
+	if (!*head || !head)
 	{
 		dprintf(2, "L%u: can't pop an empty stack\n", line_num);
 		cleanup_exit();
