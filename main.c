@@ -1,17 +1,19 @@
 #include "monty.h"
 
+struct global_vars global = {0, NULL, NULL, NULL};
+
 /**
  * main - Interpreter for monty bytecodes.
  * @ac: argument count to program.
  * @av: arguments to program.
  * Return: 0 always.
  */
-globs global = {0, NULL, NULL, NULL};
 int main(int ac, char **av)
 {
 	size_t len = 0;
 	int line_num = 1;
 
+	/* globs global = {0, NULL, NULL, NULL}; */
 	if (ac != 2)
 	{
 		dprintf(1, "USAGE: monty file\n");

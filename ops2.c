@@ -13,6 +13,9 @@ void _add(stack_t **head, unsigned int line_num)
 	if (!*head || !(*head)->next)
 	{
 		printf("L%d: can't swap, stack too short\n", line_num);
+		fclose(global.fp);
+		free_stack(global.stack);
+		free(global.line);
 		exit(EXIT_FAILURE);
 	}
 	top = *head;

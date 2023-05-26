@@ -20,9 +20,9 @@ void execute_op(char *input, unsigned int line_num)
 	char *tok;
 	int i;
 
-	input = trim_space(input);
-	if (!*input)
-		return;
+	/* input = trim_space(input); */
+	/* if (!*input) */
+	/* 	return; */
 	tok = strtok(input, TOK_DELIM);
 	for (i = 0; i < 7; i++)
 	{
