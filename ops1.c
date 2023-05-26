@@ -20,8 +20,8 @@ void _push(stack_t **head, unsigned int line_num)
 	top->prev = NULL;
 	top->n = global.number;
 	top->next = *head;
-	if (*head != NULL)
-		(*head)->prev = top;
+	if (global.stack != NULL)
+		(global.stack)->prev = top;
 	*head = top;
 }
 
