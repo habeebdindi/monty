@@ -10,13 +10,10 @@ void _add(stack_t **head, unsigned int line_num)
 {
 	stack_t *top;
 
-	if (!*head || !(*head)->next)
+	if (!*head || !(*head)->next || !head)
 	{
-		dprintf(2, "L%u: can't swap, stack too short\n", line_num);
-		fclose(global.fp);
-		free_stack(global.stack);
-		free(global.line);
-		exit(EXIT_FAILURE);
+		dprintf(2, "L%u: can't add, stack too short\n", line_num);
+		cleanup_exit();
 	}
 	top = *head;
 	(*head)->next->n += (*head)->n;
@@ -36,7 +33,7 @@ void _sub(stack_t **head, unsigned int line_num)
 {
 	stack_t *top;
 
-	if (!*head || !(*head)->next)
+	if (!*head || !(*head)->next || !head)
 	{
 		dprintf(2, "L%u: can't sub, stack too short\n", line_num);
 		cleanup_exit();
