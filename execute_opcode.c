@@ -18,7 +18,7 @@ void execute_op(char *input, unsigned int line_num)
 	int i;
 
 	input = trim_space(input);
-	if (!*input)
+	if (!*input || *input == '#')
 		return;
 	tok = strtok(input, TOK_DELIM);
 	for (i = 0; i < 12; i++)
