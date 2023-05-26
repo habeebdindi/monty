@@ -1,6 +1,5 @@
 #include "monty.h"
-
-struct global_vars global = {0, NULL, NULL, NULL};
+globs global = {0, NULL, NULL, NULL};
 
 /**
  * main - Interpreter for monty bytecodes.
@@ -13,16 +12,15 @@ int main(int ac, char **av)
 	size_t len = 0;
 	int line_num = 1;
 
-	/* globs global = {0, NULL, NULL, NULL}; */
 	if (ac != 2)
 	{
-		dprintf(1, "USAGE: monty file\n");
+		dprintf(2, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	global.fp = fopen(av[1], "r");
 	if (!global.fp)
 	{
-		dprintf(1, "Error: Can't open file %s\n", av[1]);
+		dprintf(2, "Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (getline(&(global.line), &len, global.fp) != -1)

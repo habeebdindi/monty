@@ -41,7 +41,6 @@ typedef struct global_vars
 	stack_t *stack;
 	char *line;
 } globs;
-
 extern globs global;
 
 /**

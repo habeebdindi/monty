@@ -20,9 +20,9 @@ void execute_op(char *input, unsigned int line_num)
 	char *tok;
 	int i;
 
-	/* input = trim_space(input); */
-	/* if (!*input) */
-	/* 	return; */
+	input = trim_space(input);
+	if (!*input)
+		return;
 	tok = strtok(input, TOK_DELIM);
 	for (i = 0; i < 7; i++)
 	{
@@ -37,7 +37,7 @@ void execute_op(char *input, unsigned int line_num)
 			return;
 		}
 	}
-	dprintf(1, "L:%u unknown instruction %s\n", line_num, tok);
+	dprintf(2, "L:%u unknown instruction %s\n", line_num, tok);
 	fclose(global.fp);
 	free(global.line);
 	free_stack(global.stack);
@@ -55,7 +55,7 @@ void check_push(char *tok, unsigned int line_num)
 		global.number = atoi(tok);
 	if (!tok || (global.number == 0 && *tok != '0'))
 	{
-		dprintf(1, "L%u: usage: push integer\n", line_num);
+		dprintf(2, "L%u: usage: push integer\n", line_num);
 		fclose(global.fp);
 		free_stack(global.stack);
 		free(global.line);
