@@ -45,9 +45,9 @@ void execute_op(char *input, unsigned int line_num)
  */
 void check_push(char *tok, unsigned int line_num)
 {
-	if (tok)
+	if (is_number(tok))
 		global.number = atoi(tok);
-	if (!tok || (global.number == 0 && *tok != '0'))
+	else
 	{
 		dprintf(2, "L%u: usage: push integer\n", line_num);
 		cleanup_exit();

@@ -25,8 +25,7 @@ int main(int ac, char **av)
 	}
 	while (getline(&(global.line), &len, global.fp) != -1)
 	{
-		if (global.line)
-			execute_op(global.line, line_num);
+		execute_op(global.line, line_num);
 		line_num++;
 	}
 	fclose(global.fp);

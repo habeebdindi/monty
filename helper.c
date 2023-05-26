@@ -39,3 +39,28 @@ char *trim_space(char *s)
 	*(end + 1) = '\0';
 	return (s);
 }
+
+/**
+ * is_number - checks if a string is a number.
+ * @str: the string.
+ * Return: 1 if it's a number and 0 otherwise.
+ */
+int is_number(char *str)
+{
+	if (str == NULL || *str == '\0')
+		return (0);
+
+	if (*str == '-' || *str == '+')
+		str++;
+
+	if (*str == '\0')
+		return (0);
+
+	while (*str != '\0')
+	{
+		if (!isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
+}
