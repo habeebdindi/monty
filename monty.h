@@ -74,4 +74,5 @@ void cleanup_exit(void);
 void free_stack(stack_t *head);
 void check_push(char *tok, unsigned int line_num);
 char *trim_space(char *s);
+int is_number(char *str);
 #endif /* MONTY_H */
