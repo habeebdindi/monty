@@ -37,7 +37,6 @@ void _pchar(stack_t **head, unsigned int line_num)
 {
 	stack_t *top;
 
-	(void)line_num;
 	if (!*head || !head)
 	{
 		dprintf(2, "L%u: can't pchar, value out of range\n", line_num);
