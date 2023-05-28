@@ -39,11 +39,17 @@ void _pchar(stack_t **head, unsigned int line_num)
 
 	if (!*head || !head)
 	{
-		dprintf(2, "L%u: can't pchar, value out of range\n", line_num);
+		dprintf(2, "L%u: can't pchar, stack empty\n", line_num);
 		cleanup_exit();
 	}
 	top = *head;
-	printf("%c\n", top->n);
+	if (top->n >= 0 && top->n <= 127)
+		printf("%c\n", top->n);
+	else
+	{
+		dprintf(2, "L%u: can't pchar, value out of range\n", line_num);
+		cleanup_exit();
+	}
 }
 
 /**
