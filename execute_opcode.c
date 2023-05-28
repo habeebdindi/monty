@@ -35,7 +35,7 @@ void execute_op(char *input, unsigned int line_num)
 			return;
 		}
 	}
-	dprintf(2, "L:%u unknown instruction %s\n", line_num, tok);
+	dprintf(2, "L%u: unknown instruction %s\n", line_num, tok);
 	cleanup_exit();
 }
 
