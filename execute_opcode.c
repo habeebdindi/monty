@@ -13,7 +13,7 @@ void execute_op(char *input, unsigned int line_num)
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
 		{"nop", _nop}, {"sub", _sub}, {"div", _div},
 		{"mul", _mul}, {"mod", _mod}, {"pchar", _pchar},
-		{"pstr", _pstr}, {NULL, NULL}
+		{"pstr", _pstr}
 	};
 	char *tok;
 	int i;
@@ -22,7 +22,7 @@ void execute_op(char *input, unsigned int line_num)
 	if (!*input || *input == '#')
 		return;
 	tok = strtok(input, TOK_DELIM);
-	for (i = 0; i < 14; i++)
+	for (i = 0; i < 13; i++)
 	{
 		if (strcmp(tok, ops[i].opcode) == 0)
 		{
