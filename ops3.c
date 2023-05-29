@@ -64,11 +64,15 @@ void _pstr(stack_t **head, unsigned int line_num)
 
 	(void)line_num;
 	if (!*head || !head)
-		return;
+		printf("\n");
 	top = *head;
 	while (top)
 	{
-		printf("%c\n", top->n);
+		if (top->n > 0 && top->n <= 127)
+			printf("%c", top->n);
+		else
+			break;
 		top = top->next;
 	}
+	printf("\n");
 }
