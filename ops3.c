@@ -64,7 +64,10 @@ void _pstr(stack_t **head, unsigned int line_num)
 
 	(void)line_num;
 	if (!*head || !head)
+	{
 		printf("\n");
+		return;
+	}
 	top = *head;
 	while (top)
 	{
