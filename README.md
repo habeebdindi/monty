@@ -288,6 +288,7 @@ the value of the element is not in the ascii table
 If the stack is empty, print only a new line
 
 
+
 13. rotl
 #advanced
 Implement the rotl opcode.
@@ -301,8 +302,10 @@ The top element of the stack becomes the last one, and the second top element of
 rotl never fails
 
 
+
 14. rotr
-#advanced
+
+# advanced
 Implement the rotr opcode.
 
 The rotr opcode
@@ -318,6 +321,7 @@ rotr never fails
 #advanced
 Implement the stack and queue opcodes.
 
+
 The stack opcode
 
 The opcode stack sets the format of the data to a stack (LIFO). This is the default behavior of the program.
@@ -332,36 +336,6 @@ When switching mode:
 
 The top of the stack becomes the front of the queue
 The front of the queue becomes the top of the stack
-
-
-16. Brainf*ck
-#advanced
-Write a Brainf*ck script that prints School, followed by a new line.
-
-All your Brainf*ck files should be stored inside the bf sub directory
-You can install the bf interpreter to test your code: sudo apt-get install bf
-Read: Brainf*ck
-
-
-17. Add two digits
-#advanced
-Add two digits given by the user.
-
-Read the two digits from stdin, add them, and print the result
-The total of the two digits with be one digit-long (<10)
-
-
-18. Multiplication
-#advanced
-Multiply two digits given by the user.
-
-Read the two digits from stdin, multiply them, and print the result
-The result of the multiplication will be one digit-long (<10)
-
-
-19. Multiplication level up
-#advanced
-Multiply two digits given by the user.
 
 
 
